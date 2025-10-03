@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Think Kisan: 7-in-1 Soil Monitoring & Smart Irrigation</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Real-time soil telemetry + automated irrigation using LoRa, ESP32 & Firebase. A compact farm telemetry system with mobile app surveillance.">
+    <meta name="author" content="Think Kisan Team">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Think Kisan: 7-in-1 Soil Monitoring & Smart Irrigation">
+    <meta property="og:description" content="Real-time soil telemetry + automated irrigation using LoRa, ESP32 & Firebase.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://yoursite.com/think-kisan">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Think Kisan: 7-in-1 Soil Monitoring & Smart Irrigation",
+      "description": "Think Kisan is a compact farm telemetry system using a 7-in-1 soil sensor connected to an Arduino. Data is forwarded over LoRa to an ESP32 gateway which pushes data to Firebase.",
+      "author": {
+        "@type": "Person",
+        "name": "Think Kisan Team"
+      },
+      "datePublished": "2025-01-15"
+    }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 
+    ========================================
+    README: How to customize this blog post
+    ========================================
+    
+    1. COLORS: Edit the CSS variables in styles.css (--navy, --white, --sky-blue)
+    2. CONTENT: Replace text in sections below marked with "Replace this content" comments
+    3. IMAGES: Use the image upload tool in the Gallery section, or replace placeholder images in /images/ folder
+    4. HOSTING: Simply upload index.html, styles.css, script.js and /images/ folder to any static host
+    5. EXPORT: Click "Print / Export to PDF" button to generate a PDF version
+    
+    ========================================
+    -->
+
+    <!-- Sticky Navigation -->
+    <nav id="main-nav" class="nav-bar">
+        <div class="nav-container">
+            <div class="nav-logo">Think Kisan</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#hardware">Hardware</a></li>
+                <li><a href="#mobile-app">Mobile App</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#cta">Contact</a></li>
+            </ul>
+            <button id="theme-toggle" class="theme-btn" aria-label="Toggle high contrast mode">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10 2V4M10 16V18M4 10H2M18 10H16M15.657 4.343L14.243 5.757M5.757 14.243L4.343 15.657M15.657 15.657L14.243 14.243M5.757 5.757L4.343 4.343" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Article -->
+    <article class="blog-post">
+        
+        <!-- Hero Section -->
+        <header id="hero" class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">IoT Agriculture Project</div>
+                <h1 class="hero-title">Think Kisan: 7-in-1 Soil Monitoring & Smart Irrigation</h1>
+                <p class="hero-tagline">Real-time soil telemetry + automated irrigation using LoRa, ESP32 & Firebase.</p>
+                <div class="hero-meta">
+                    <span class="meta-item">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 8C9.65685 8 11 6.65685 11 5C11 3.34315 9.65685 2 8 2C6.34315 2 5 3.34315 5 5C5 6.65685 6.34315 8 8 8Z" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M14 14C14 11.7909 11.3137 10 8 10C4.68629 10 2 11.7909 2 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        Think Kisan Team
+                    </span>
+                    <span class="meta-item">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="3" width="12" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M5 2V4M11 2V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        January 15, 2025
+                    </span>
+                </div>
+            </div>
+        </header>
+
+        <main class="main-content">
+            
+            <!-- Summary Section -->
+            <section id="summary" class="summary-section">
+                <div class="summary-card">
+                    <h2>Project Overview</h2>
+                    <p id="summary-text">Think Kisan is a compact farm telemetry system using a 7-in-1 soil sensor connected to an Arduino. Data is forwarded over LoRa to an ESP32 gateway which pushes data to Firebase (Firestore + Realtime DB). An Arduino Nano with a 40A relay controls the irrigation motor based on field water level and soil moisture. We built a multi-user surveillance mobile app in Expo React Native that shows dashboards, operation controls (manual/auto), weather (via free weather API), and exports soil data to PDF by averaging last N values or within a time period.</p>
+                    <button id="copy-summary-btn" class="copy-btn">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                            <path d="M3 11V3C3 2.44772 3.44772 2 4 2H10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        Copy Summary
+                    </button>
+                </div>
+
+                <!-- Key Numbers Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="4" y="8" width="24" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 8V6C12 4.89543 12.8954 4 14 4H18C19.1046 4 20 4.89543 20 6V8" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="16" cy="16" r="3" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>7-in-1</h3>
+                        <p>Soil Sensor Parameters</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 4L4 10L16 16L28 10L16 4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <path d="M4 16L16 22L28 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M4 22L16 28L28 22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>LoRa</h3>
+                        <p>Long-Range Communication</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 10V16L20 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Real-Time</h3>
+                        <p>Firebase Data Sync</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="6" y="4" width="20" height="24" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M12 12H20M12 16H20M12 20H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Mobile App</h3>
+                        <p>Expo React Native</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works Section -->
+            <section id="how-it-works" class="how-it-works">
+                <h2>How It Works</h2>
+                <p class="section-intro">The Think Kisan system follows a streamlined data flow from field sensors to your mobile device.</p>
+                
+                <div class="flow-diagram">
+                    <div class="flow-step">
+                        <div class="flow-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="20" r="16" stroke="currentColor" stroke-width="2"/>
+                                <path d="M20 12V20L26 26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Sensor Reading</h3>
+                        <p>7-in-1 soil sensor measures moisture, temperature, pH, NPK levels</p>
+                    </div>
+                    
+                    <div class="flow-arrow">→</div>
+                    
+                    <div class="flow-step">
+                        <div class="flow-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="12" width="24" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 12V10C16 8.89543 16.8954 8 18 8H22C23.1046 8 24 8.89543 24 10V12" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>Arduino Processing</h3>
+                        <p>Arduino collects and packages sensor data</p>
+                    </div>
+                    
+                    <div class="flow-arrow">→</div>
+                    
+                    <div class="flow-step">
+                        <div class="flow-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="20" r="3" fill="currentColor"/>
+                                <circle cx="20" cy="20" r="8" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4"/>
+                            </svg>
+                        </div>
+                        <h3>LoRa Transmission</h3>
+                        <p>Long-range wireless transmission to gateway</p>
+                    </div>
+                    
+                    <div class="flow-arrow">→</div>
+                    
+                    <div class="flow-step">
+                        <div class="flow-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 8C26.6274 8 32 13.3726 32 20C32 26.6274 26.6274 32 20 32C13.3726 32 8 26.6274 8 20C8 13.3726 13.3726 8 20 8Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M20 14V20L24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>ESP32 Gateway</h3>
+                        <p>Receives LoRa data and pushes to Firebase</p>
+                    </div>
+                    
+                    <div class="flow-arrow">→</div>
+                    
+                    <div class="flow-step">
+                        <div class="flow-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 8L12 14V26L20 32L28 26V14L20 8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                <circle cx="20" cy="20" r="4" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>Firebase Cloud</h3>
+                        <p>Stores data in Firestore & Realtime DB</p>
+                    </div>
+                    
+                    <div class="flow-arrow">→</div>
+                    
+                    <div class="flow-step">
+                        <div class="flow-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="10" y="6" width="20" height="28" rx="3" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 12H24M16 16H24M16 20H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Mobile App</h3>
+                        <p>Real-time dashboard and control interface</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Hardware Section -->
+            <section id="hardware" class="detail-section">
+                <h2>Hardware Components</h2>
+                <p class="section-intro">The Think Kisan system is built with carefully selected components for reliability and performance in agricultural environments.</p>
+                
+                <div class="two-column-layout">
+                    <div class="content-block">
+                        <h3>Sensor & Data Collection</h3>
+                        <ul class="component-list">
+                            <li>
+                                <strong>7-in-1 Soil Sensor</strong>
+                                <span>Measures moisture, temperature, pH, nitrogen, phosphorus, potassium, and electrical conductivity</span>
+                            </li>
+                            <li>
+                                <strong>Arduino (Sensor Box)</strong>
+                                <span>Collects and processes sensor data before transmission</span>
+                            </li>
+                            <li>
+                                <strong>LoRa Modules</strong>
+                                <span>Long-range wireless communication (up to 10km in open field)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h3>Gateway & Control</h3>
+                        <ul class="component-list">
+                            <li>
+                                <strong>ESP32 Gateway</strong>
+                                <span>Receives LoRa data and connects to Firebase via WiFi</span>
+                            </li>
+                            <li>
+                                <strong>Arduino Nano</strong>
+                                <span>Controls irrigation system based on sensor thresholds</span>
+                            </li>
+                            <li>
+                                <strong>40A Relay + Motor</strong>
+                                <span>High-capacity relay for irrigation pump control</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Communication Section -->
+            <section id="communication" class="detail-section">
+                <h2>Data Flow & Communication</h2>
+                <p class="section-intro">Think Kisan uses a multi-layer communication architecture to ensure reliable data transmission from field to cloud.</p>
+                
+                <div class="info-card">
+                    <h3>Communication Architecture</h3>
+                    <p>The system employs a hybrid communication strategy combining LoRa for long-range field communication and WiFi for cloud connectivity. This approach ensures reliable data transmission even in remote agricultural areas where WiFi coverage may be limited.</p>
+                    
+                    <div class="architecture-steps">
+                        <div class="arch-step">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <h4>Sensor → Arduino Box</h4>
+                                <p>7-in-1 soil sensor communicates with Arduino via RS485/Modbus protocol</p>
+                            </div>
+                        </div>
+                        <div class="arch-step">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <h4>Arduino Box → LoRa</h4>
+                                <p>Arduino packages data and transmits via LoRa module (433MHz/868MHz/915MHz)</p>
+                            </div>
+                        </div>
+                        <div class="arch-step">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <h4>LoRa → ESP32 Gateway</h4>
+                                <p>ESP32 receives LoRa packets and decodes sensor data</p>
+                            </div>
+                        </div>
+                        <div class="arch-step">
+                            <span class="step-number">4</span>
+                            <div class="step-content">
+                                <h4>ESP32 → Firebase</h4>
+                                <p>Gateway pushes data to Firestore (historical) and Realtime Database (live status)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cloud & Database Section -->
+            <section id="cloud" class="detail-section">
+                <h2>Cloud & Databases</h2>
+                <p class="section-intro">Think Kisan leverages Firebase's dual-database architecture for optimal performance and flexibility.</p>
+                
+                <div class="two-column-layout">
+                    <div class="db-card">
+                        <div class="db-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <ellipse cx="24" cy="12" rx="16" ry="6" stroke="currentColor" stroke-width="2"/>
+                                <path d="M8 12V36C8 38.2091 15.1634 40 24 40C32.8366 40 40 38.2091 40 36V12" stroke="currentColor" stroke-width="2"/>
+                                <path d="M8 24C8 26.2091 15.1634 28 24 28C32.8366 28 40 26.2091 40 24" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>Firestore</h3>
+                        <p><strong>Purpose:</strong> Historical sensor data storage</p>
+                        <ul>
+                            <li>Time-series soil measurements</li>
+                            <li>Irrigation event logs</li>
+                            <li>User activity records</li>
+                            <li>Optimized for complex queries and analytics</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="db-card">
+                        <div class="db-icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/>
+                                <path d="M24 10V24L32 32" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="24" cy="24" r="3" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3>Realtime Database</h3>
+                        <p><strong>Purpose:</strong> Live system status monitoring</p>
+                        <ul>
+                            <li>Circuit box charging status</li>
+                            <li>Current water moisture levels</li>
+                            <li>Temperature of 3 circuit boxes</li>
+                            <li>Optimized for real-time synchronization</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Irrigation Control Section -->
+            <section id="irrigation" class="detail-section">
+                <h2>Irrigation Control System</h2>
+                <p class="section-intro">Intelligent irrigation management with automatic and manual control modes.</p>
+                
+                <div class="info-card">
+                    <h3>Control Logic</h3>
+                    <p>The irrigation system operates in two modes, providing flexibility for different farming scenarios and user preferences.</p>
+                    
+                    <div class="control-modes">
+                        <div class="mode-card">
+                            <div class="mode-header">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 4L4 10L16 16L28 10L16 4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                                    <path d="M4 16L16 22L28 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="16" cy="16" r="3" fill="currentColor"/>
+                                </svg>
+                                <h4>Automatic Mode</h4>
+                            </div>
+                            <p>Arduino Nano continuously monitors soil moisture and water level sensors. When moisture drops below threshold AND water level is sufficient, the 40A relay activates the irrigation motor automatically.</p>
+                            <div class="mode-features">
+                                <span class="feature-tag">Threshold-based</span>
+                                <span class="feature-tag">Energy efficient</span>
+                                <span class="feature-tag">24/7 monitoring</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mode-card">
+                            <div class="mode-header">
+                                <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2"/>
+                                    <path d="M16 10V16H22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                                <h4>Manual Mode</h4>
+                            </div>
+                            <p>Users can override automatic control via the mobile app. Direct ON/OFF commands are sent through Firebase to the Arduino Nano, providing immediate control over irrigation operations.</p>
+                            <div class="mode-features">
+                                <span class="feature-tag">User override</span>
+                                <span class="feature-tag">Instant control</span>
+                                <span class="feature-tag">App-based</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Mobile App Section -->
+            <section id="mobile-app" class="detail-section">
+                <h2>Mobile Application</h2>
+                <p class="section-intro">Built with Expo React Native for cross-platform compatibility and real-time data visualization.</p>
+                
+                <div class="app-features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="6" y="6" width="28" height="28" rx="4" stroke="currentColor" stroke-width="2"/>
+                                <path d="M6 14H34M14 6V34" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3>Dashboard</h3>
+                        <p>Real-time visualization of all sensor data with charts and graphs. Monitor soil conditions, irrigation status, and system health at a glance.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="20" cy="20" r="14" stroke="currentColor" stroke-width="2"/>
+                                <path d="M20 12V20L26 26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Operations Control</h3>
+                        <p>Switch between automatic and manual irrigation modes. Direct control over irrigation motor with real-time status feedback.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 8C26.6274 8 32 13.3726 32 20C32 26.6274 26.6274 32 20 32C13.3726 32 8 26.6274 8 20C8 13.3726 13.3726 8 20 8Z" stroke="currentColor" stroke-width="2"/>
+                                <path d="M20 14C20 14 24 16 24 20C24 24 20 26 20 26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M20 14C20 14 16 16 16 20C16 24 20 26 20 26" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Weather Integration</h3>
+                        <p>Live weather data based on device location using free weather API. Helps plan irrigation schedules around rainfall predictions.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="6" width="24" height="28" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M14 12H26M14 20H26M14 26H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Document Export</h3>
+                        <p>Export soil data to PDF format. Choose to average last N values or filter by time period for comprehensive reports.</p>
+                    </div>
+                </div>
+                
+                <div class="app-info">
+                    <h3>App Features</h3>
+                    <div class="two-column-layout">
+                        <ul class="feature-list">
+                            <li>Multi-user authentication and role management</li>
+                            <li>4 main pages: Dashboard, Operations, Document Export, Profile</li>
+                            <li>Real-time data synchronization with Firebase</li>
+                            <li>Push notifications for critical alerts</li>
+                        </ul>
+                        <ul class="feature-list">
+                            <li>Offline mode with data caching</li>
+                            <li>Customizable sensor thresholds</li>
+                            <li>Historical data visualization with date range selection</li>
+                            <li>Cross-platform: iOS and Android support</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery Section -->
+            <section id="gallery" class="gallery-section">
+                <h2>Project Gallery</h2>
+                <p class="section-intro">Add images and screenshots of your Think Kisan deployment. Upload photos of hardware setup, mobile app screens, and field installations.</p>
+                
+                <!-- Image Upload Interface -->
+                <div class="upload-interface">
+                    <div class="upload-area" id="upload-area">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 16V32M16 24H32" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                            <rect x="6" y="6" width="36" height="36" rx="4" stroke="currentColor" stroke-width="2" stroke-dasharray="6 6"/>
+                        </svg>
+                        <h3>Upload Images</h3>
+                        <p>Click to browse or drag and drop images here</p>
+                        <input type="file" id="image-upload" accept="image/*" multiple aria-label="Upload images">
+                    </div>
+                </div>
+                
+                <!-- Image Preview Grid -->
+                <div id="image-preview-grid" class="image-grid">
+                    <!-- Placeholder images - Replace with your actual project photos -->
+                    <div class="gallery-item placeholder-item">
+                        <img src="/placeholder.svg?height=400&width=600" alt="7-in-1 soil sensor setup">
+                        <div class="gallery-caption">
+                            <textarea placeholder="Add caption..." aria-label="Image caption">7-in-1 soil sensor connected to Arduino in weatherproof enclosure</textarea>
+                        </div>
+                        <button class="delete-btn" aria-label="Remove image">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="gallery-item placeholder-item">
+                        <img src="/placeholder.svg?height=400&width=600" alt="ESP32 gateway setup">
+                        <div class="gallery-caption">
+                            <textarea placeholder="Add caption..." aria-label="Image caption">ESP32 gateway with LoRa module and antenna</textarea>
+                        </div>
+                        <button class="delete-btn" aria-label="Remove image">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="gallery-item placeholder-item">
+                        <img src="/placeholder.svg?height=400&width=600" alt="Mobile app dashboard">
+                        <div class="gallery-caption">
+                            <textarea placeholder="Add caption..." aria-label="Image caption">Mobile app dashboard showing real-time soil data</textarea>
+                        </div>
+                        <button class="delete-btn" aria-label="Remove image">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <p class="gallery-note">
+                    <strong>Note:</strong> Replace placeholder images with actual project photos. Supported formats: JPG, PNG, WebP. Maximum file size: 5MB per image.
+                </p>
+            </section>
+
+            <!-- CTA Section -->
+            <section id="cta" class="cta-section">
+                <div class="cta-card">
+                    <h2>Get Started with Think Kisan</h2>
+                    <p>Interested in implementing Think Kisan for your farm? Download our detailed one-pager or get in touch with our team.</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="#" class="cta-btn primary" download>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M10 3V13M10 13L6 9M10 13L14 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3 17H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            Download One-Pager
+                        </a>
+                        <a href="mailto:contact@thinkkisan.example.com" class="cta-btn secondary">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M2 6L10 11L18 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            Contact Us
+                        </a>
+                        <button id="print-btn" class="cta-btn secondary">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 7V3H15V7" stroke="currentColor" stroke-width="1.5"/>
+                                <rect x="3" y="7" width="14" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                                <rect x="5" y="11" width="10" height="6" stroke="currentColor" stroke-width="1.5"/>
+                            </svg>
+                            Print / Export to PDF
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Think Kisan</h3>
+                    <p>Smart agriculture through IoT innovation</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#hardware">Hardware</a></li>
+                        <li><a href="#mobile-app">Mobile App</a></li>
+                        <li><a href="#cta">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">GitHub Repository</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="GitHub">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Think Kisan. All rights reserved. Built with ❤️ for sustainable agriculture.</p>
+            </div>
+        </footer>
+
+    </article>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
