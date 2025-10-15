@@ -55,6 +55,7 @@
 
     <!-- Sticky Navigation -->
     <nav id="main-nav" class="nav-bar">
+       <p style="text-align: center;"> <img style="height: 120px; width: 80%;" src="ap.png"></p>
         <div class="nav-container">
             <div class="nav-logo">Think Kisan</div>
             <ul class="nav-links">
@@ -164,6 +165,21 @@
                     </div>
                 </div>
             </section>
+            <section id="demo" class="section">
+  <h2>Demo Video</h2>
+  <div class="video-container">
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/YqrqVNPUFRs"
+      title="Think Kisan Demo"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
 
             <!-- How It Works Section -->
             <section id="how-it-works" class="how-it-works">
@@ -500,64 +516,23 @@
             <!-- Gallery Section -->
             <section id="gallery" class="gallery-section">
                 <h2>Project Gallery</h2>
-                <p class="section-intro">Add images and screenshots of your Think Kisan deployment. Upload photos of hardware setup, mobile app screens, and field installations.</p>
                 
                 <!-- Image Upload Interface -->
                 <div class="upload-interface">
                     <div class="upload-area" id="upload-area">
-                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M24 16V32M16 24H32" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-                            <rect x="6" y="6" width="36" height="36" rx="4" stroke="currentColor" stroke-width="2" stroke-dasharray="6 6"/>
-                        </svg>
-                        <h3>Upload Images</h3>
-                        <p>Click to browse or drag and drop images here</p>
-                        <input type="file" id="image-upload" accept="image/*" multiple aria-label="Upload images">
+                      <img class="imageA" src="a1.jpeg">
+                       <img class="imageA" src="a2.jpeg">
+                        <img class="imageA" src="a3.jpeg">
+                         <img class="imageA" src="a4.jpeg">
+                          <img class="imageA" src="a5.jpeg">
+                           <img class="imageA" src="a6.jpeg">
+                       
                     </div>
                 </div>
                 
-                <!-- Image Preview Grid -->
-                <div id="image-preview-grid" class="image-grid">
-                    <!-- Placeholder images - Replace with your actual project photos -->
-                    <div class="gallery-item placeholder-item">
-                        <img src="/placeholder.svg?height=400&width=600" alt="7-in-1 soil sensor setup">
-                        <div class="gallery-caption">
-                            <textarea placeholder="Add caption..." aria-label="Image caption">7-in-1 soil sensor connected to Arduino in weatherproof enclosure</textarea>
-                        </div>
-                        <button class="delete-btn" aria-label="Remove image">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </button>
-                    </div>
-                    
-                    <div class="gallery-item placeholder-item">
-                        <img src="/placeholder.svg?height=400&width=600" alt="ESP32 gateway setup">
-                        <div class="gallery-caption">
-                            <textarea placeholder="Add caption..." aria-label="Image caption">ESP32 gateway with LoRa module and antenna</textarea>
-                        </div>
-                        <button class="delete-btn" aria-label="Remove image">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </button>
-                    </div>
-                    
-                    <div class="gallery-item placeholder-item">
-                        <img src="/placeholder.svg?height=400&width=600" alt="Mobile app dashboard">
-                        <div class="gallery-caption">
-                            <textarea placeholder="Add caption..." aria-label="Image caption">Mobile app dashboard showing real-time soil data</textarea>
-                        </div>
-                        <button class="delete-btn" aria-label="Remove image">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
+                <!-- Image Preview Grid  -->
                 
-                <p class="gallery-note">
-                    <strong>Note:</strong> Replace placeholder images with actual project photos. Supported formats: JPG, PNG, WebP. Maximum file size: 5MB per image.
-                </p>
+               
             </section>
 
             <!-- CTA Section -->
@@ -574,24 +549,79 @@
                             </svg>
                             Download One-Pager
                         </a>
-                        <a href="mailto:contact@thinkkisan.example.com" class="cta-btn secondary">
+                        <a href="mailto:thinkkisan@gmail.com" class="cta-btn secondary">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/>
                                 <path d="M2 6L10 11L18 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                             </svg>
                             Contact Us
                         </a>
-                        <button id="print-btn" class="cta-btn secondary">
+             <a href="https://drive.google.com/file/d/1bQyQyKrF5d_UyNUbgHVmImrldPeNJGmb/view?usp=sharing" class="cta-btn secondary" download>
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 7V3H15V7" stroke="currentColor" stroke-width="1.5"/>
-                                <rect x="3" y="7" width="14" height="6" rx="1" stroke="currentColor" stroke-width="1.5"/>
-                                <rect x="5" y="11" width="10" height="6" stroke="currentColor" stroke-width="1.5"/>
+                                <path d="M10 3V13M10 13L6 9M10 13L14 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M3 17H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             </svg>
-                            Print / Export to PDF
-                        </button>
+                            Download Think Kisan App
+                        </a>
                     </div>
                 </div>
             </section>
+           <section id="special-thanks" class="special-thanks-section">
+    <h2>Special Thanks To</h2>
+    <p class="section-intro" style="text-align: center; margin-left: auto; margin-right: auto;">
+        This project was made possible with the guidance and support of these amazing people.
+    </p>
+
+    <div class="profiles-grid">
+        <div class="profile-card">
+            <img class="profile-image" src="dc.jpg" alt="Profile picture of a project mentor">
+            <h4 class="profile-name">Smt. C. Nagarani, IAS</h4>
+        </div>
+
+        <div class="profile-card">
+            <img class="profile-image" src="jc.jpg" alt="Profile picture of a project advisor">
+            <h4 class="profile-name">Sri T. Rahul Kumar Reddy I.A.S.</h4>
+        </div>
+
+        <div class="profile-card">
+            <img class="profile-image" src="ac.png" alt="Profile picture of a team member">
+            <h4 class="profile-name">Z . Venkateswara Rao</h4>
+        </div>
+
+
+
+        </div>
+</section>
+<hr>
+<section id="team" class="section">
+  <h2>Project Team</h2>
+  <div class="team-container">
+    <div class="team-member">
+      <h3>D.Rupa Sai</h3>
+      <p>Hardware Engineer — contributed to sensor integration, circuit design, and soil monitoring system calibration.</p>
+    </div>
+
+    <div class="team-member">
+      <h3>A.Uma Manikanta</h3>
+      <p>Hardware Engineer — worked on microcontroller connections, data acquisition, and power management system.</p>
+    </div>
+
+    <div class="team-member">
+      <h3>K.Hemanth Varma</h3>
+      <p>Hardware Engineer — handled IoT sensor interfacing, signal conditioning, and real-time data transmission setup.</p>
+    </div>
+
+  <a href="">  <div class="team-member">
+      <h3>Marre Dinesh</h3>
+      <p>App & Web Developer — developed the mobile and web applications, handled UI/UX design, and integrated cloud database with the IoT system.</p>
+    </div></a>
+  </div>
+
+ <a href="https://www.linkedin.com/in/dr-s-ravi-chand-33915524/"> <div class="mentor-section">
+    <h2>Mentor & Guide</h2>
+    <p><strong>Dr. S. Ravichand, Ph.D.</strong><br>Provided expert mentorship in project development, research guidance, and technical validation.</p>
+  </div></a>
+</section>
 
         </main>
 
@@ -614,15 +644,15 @@
                 <div class="footer-section">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">GitHub Repository</a></li>
-                        <li><a href="#">Support</a></li>
+                        <li><a href="https://drive.google.com/file/d/1OX0poSp4Ic3CAu431jwE3ZarhNmazxOi/view?usp=drive_link">Documentation</a></li>
+                        <li><a href="https://github.com/thinkkisan/think-kisan-app">GitHub Repository</a></li>
+                        <li><a href="https://github.com/thinkkisan/thinkkisan">GitHub Repo for Hardware</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Connect</h4>
                     <div class="social-links">
-                        <a href="#" aria-label="GitHub">
+                        <a href="https://github.com/thinkkisan#" aria-label="GitHub">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
                             </svg>
