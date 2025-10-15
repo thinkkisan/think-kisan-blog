@@ -14,6 +14,7 @@
     <meta property="og:description" content="Real-time soil telemetry + automated irrigation using LoRa, ESP32 & Firebase.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://yoursite.com/think-kisan">
+    <meta property="og:image" content="https://yoursite.com/images/think-kisan-hero.jpg">
     
     <!-- JSON-LD Schema -->
     <script type="application/ld+json">
@@ -26,7 +27,7 @@
         "@type": "Person",
         "name": "Think Kisan Team"
       },
-      "datePublished": "2025-01-15"
+      "datePublished": "2025-10-15"
     }
     </script>
     
@@ -55,12 +56,15 @@
 
     <!-- Sticky Navigation -->
     <nav id="main-nav" class="nav-bar">
-       <p style="text-align: center;"> <img style="height: 120px; width: 80%;" src="ap.png"></p>
+       <div style="text-align: center; flex-grow: 1;">
+            <img style="height: 120px; width: 80%;" src="ap.png" alt="Think Kisan Logo">
+        </div>
         <div class="nav-container">
             <div class="nav-logo">Think Kisan</div>
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#summary">Summary</a></li>
+                <li><a href="#demo">Demo</a></li>
                 <li><a href="#how-it-works">How It Works</a></li>
                 <li><a href="#hardware">Hardware</a></li>
                 <li><a href="#mobile-app">Mobile App</a></li>
@@ -97,7 +101,7 @@
                             <rect x="2" y="3" width="12" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/>
                             <path d="M5 2V4M11 2V4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                         </svg>
-                        January 15, 2025
+                        October 15, 2025
                     </span>
                 </div>
             </div>
@@ -165,21 +169,23 @@
                     </div>
                 </div>
             </section>
-            <section id="demo" class="section">
-  <h2>Demo Video</h2>
-  <div class="video-container">
-    <iframe
-      width="560"
-      height="315"
-      src="https://www.youtube.com/embed/YqrqVNPUFRs"
-      title="Think Kisan Demo"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
-</section>
 
+            <!-- Demo Section -->
+            <section id="demo" class="section">
+                <h2>Demo Video</h2>
+                <div class="video-container">
+                    <iframe
+                      width="560"
+                      height="315"
+                      src="https://www.youtube.com/embed/YqrqVNPUFRs"
+                      title="Think Kisan Demo"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen
+                      loading="lazy">
+                    </iframe>
+                </div>
+            </section>
 
             <!-- How It Works Section -->
             <section id="how-it-works" class="how-it-works">
@@ -518,21 +524,10 @@
                 <h2>Project Gallery</h2>
                 
                 <!-- Image Upload Interface -->
-                <div class="upload-interface">
-                    <div class="upload-area" id="upload-area">
-                      <img class="imageA" src="a1.jpeg">
-                       <img class="imageA" src="a2.jpeg">
-                        <img class="imageA" src="a3.jpeg">
-                         <img class="imageA" src="a4.jpeg">
-                          <img class="imageA" src="a5.jpeg">
-                           <img class="imageA" src="a6.jpeg">
-                       
-                    </div>
-                </div>
+        
                 
-                <!-- Image Preview Grid  -->
-                
-               
+                <!-- Image Preview Grid -->
+                <div id="image-preview-grid" class="image-grid"></div>
             </section>
 
             <!-- CTA Section -->
@@ -556,72 +551,79 @@
                             </svg>
                             Contact Us
                         </a>
-             <a href="https://drive.google.com/file/d/1bQyQyKrF5d_UyNUbgHVmImrldPeNJGmb/view?usp=sharing" class="cta-btn secondary" download>
+                        <a href="https://drive.google.com/file/d/1bQyQyKrF5d_UyNUbgHVmImrldPeNJGmb/view?usp=sharing" class="cta-btn secondary" download>
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M10 3V13M10 13L6 9M10 13L14 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M3 17H17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             </svg>
                             Download Think Kisan App
                         </a>
+                        <button id="print-btn" class="cta-btn secondary">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="6" y="4" width="8" height="4" rx="2" stroke="currentColor" stroke-width="2"/>
+                                <path d="M6 8H14V16H6V8Z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            Print / Export to PDF
+                        </button>
                     </div>
                 </div>
             </section>
-           <section id="special-thanks" class="special-thanks-section">
-    <h2>Special Thanks To</h2>
-    <p class="section-intro" style="text-align: center; margin-left: auto; margin-right: auto;">
-        This project was made possible with the guidance and support of these amazing people.
-    </p>
 
-    <div class="profiles-grid">
-        <div class="profile-card">
-            <img class="profile-image" src="dc.jpg" alt="Profile picture of a project mentor">
-            <h4 class="profile-name">Smt. C. Nagarani, IAS</h4>
-        </div>
+            <!-- Special Thanks Section -->
+            <section id="special-thanks" class="special-thanks-section">
+                <h2>Special Thanks To</h2>
+                <p class="section-intro">This project was made possible with the guidance and support of these amazing people.</p>
 
-        <div class="profile-card">
-            <img class="profile-image" src="jc.jpg" alt="Profile picture of a project advisor">
-            <h4 class="profile-name">Sri T. Rahul Kumar Reddy I.A.S.</h4>
-        </div>
+                <div class="profiles-grid">
+                    <div class="profile-card">
+                        <img class="profile-image" src="dc.jpg" alt="Smt. C. Nagarani, IAS - Project Mentor">
+                        <h4 class="profile-name">Smt. C. Nagarani, IAS</h4>
+                    </div>
 
-        <div class="profile-card">
-            <img class="profile-image" src="ac.png" alt="Profile picture of a team member">
-            <h4 class="profile-name">Z . Venkateswara Rao</h4>
-        </div>
+                    <div class="profile-card">
+                        <img class="profile-image" src="jc.jpg" alt="Sri T. Rahul Kumar Reddy I.A.S. - Project Advisor">
+                        <h4 class="profile-name">Sri T. Rahul Kumar Reddy I.A.S.</h4>
+                    </div>
 
+                    <div class="profile-card">
+                        <img class="profile-image" src="ac.png" alt="Z. Venkateswara Rao - Team Contributor">
+                        <h4 class="profile-name">Z. Venkateswara Rao</h4>
+                    </div>
+                </div>
+            </section>
 
+            <hr>
+            <section id="team" class="section">
+                <h2>Project Team</h2>
+                <div class="team-container">
+                    <div class="team-member">
+                        <h3>D. Rupa Sai</h3>
+                        <p>Hardware Engineer — contributed to sensor integration, circuit design, and soil monitoring system calibration.</p>
+                    </div>
 
-        </div>
-</section>
-<hr>
-<section id="team" class="section">
-  <h2>Project Team</h2>
-  <div class="team-container">
-    <div class="team-member">
-      <h3>D.Rupa Sai</h3>
-      <p>Hardware Engineer — contributed to sensor integration, circuit design, and soil monitoring system calibration.</p>
-    </div>
+                    <div class="team-member">
+                        <h3>A. Uma Manikanta</h3>
+                        <p>Hardware Engineer — worked on microcontroller connections, data acquisition, and power management system.</p>
+                    </div>
 
-    <div class="team-member">
-      <h3>A.Uma Manikanta</h3>
-      <p>Hardware Engineer — worked on microcontroller connections, data acquisition, and power management system.</p>
-    </div>
+                    <div class="team-member">
+                        <h3>K. Hemanth Varma</h3>
+                        <p>Hardware Engineer — handled IoT sensor interfacing, signal conditioning, and real-time data transmission setup.</p>
+                    </div>
 
-    <div class="team-member">
-      <h3>K.Hemanth Varma</h3>
-      <p>Hardware Engineer — handled IoT sensor interfacing, signal conditioning, and real-time data transmission setup.</p>
-    </div>
+                    <div class="team-member">
+                        <h3>Marre Dinesh</h3>
+                        <p>App & Web Developer — developed the mobile and web applications, handled UI/UX design, and integrated cloud database with the IoT system.</p>
+                        <a href="https://www.linkedin.com/in/dinesh-marre-44411823a/" class="cta-btn secondary" style="margin-top: var(--spacing-sm); width: 100%; justify-content: center;">View LinkedIn</a>
+                    </div>
+                </div>
 
-  <a href="https://www.linkedin.com/in/dinesh-marre-44411823a/">  <div class="team-member">
-      <h3>Marre Dinesh</h3>
-      <p>App & Web Developer — developed the mobile and web applications, handled UI/UX design, and integrated cloud database with the IoT system.</p>
-    </div></a>
-  </div>
-
- <a href="https://www.linkedin.com/in/dr-s-ravi-chand-33915524/"> <div class="mentor-section">
-    <h2>Mentor & Guide</h2>
-    <p><strong>Dr. S. Ravichand, Ph.D.</strong><br>Provided expert mentorship in project development, research guidance, and technical validation.</p>
-  </div></a>
-</section>
+                <div class="mentor-section">
+                    <h2>Mentor & Guide</h2>
+                    <p><strong>Dr. S. Ravichand, Ph.D.</strong><br>Provided expert mentorship in project development, research guidance, and technical validation.</p>
+                    <a href="https://www.linkedin.com/in/dr-s-ravi-chand-33915524/" class="cta-btn secondary" style="margin-top: var(--spacing-sm);">View LinkedIn</a>
+                </div>
+            </section>
 
         </main>
 
@@ -652,17 +654,17 @@
                 <div class="footer-section">
                     <h4>Connect</h4>
                     <div class="social-links">
-                        <a href="https://github.com/thinkkisan#" aria-label="GitHub">
+                        <a href="https://github.com/thinkkisan" aria-label="GitHub">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
                             </svg>
                         </a>
-                        <a href="#" aria-label="Twitter">
+                        <a href="https://twitter.com/thinkkisan" aria-label="Twitter">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
                             </svg>
                         </a>
-                        <a href="#" aria-label="LinkedIn">
+                        <a href="https://linkedin.com/company/thinkkisan" aria-label="LinkedIn">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
                                 <circle cx="4" cy="4" r="2"/>
